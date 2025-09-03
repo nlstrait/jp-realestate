@@ -13,6 +13,11 @@ export default function Footer() {
                     <h3 className="font-bold mb-3">Pages</h3>
                     <ul>
                         <li>
+                            <Link href="/" className="border-b-2 border-transparent hover:border-white hover:text-gray-200">
+                                Home
+                            </Link>
+                        </li>
+                        <li>
                             <Link href="/about" className="border-b-2 border-transparent hover:border-white hover:text-gray-200">
                                 About
                             </Link>

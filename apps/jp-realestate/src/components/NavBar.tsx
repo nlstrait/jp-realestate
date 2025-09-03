@@ -37,6 +37,12 @@ export default function NavBar() {
 
         <div className="hidden font-sans text-base text-white font-medium sm:ml-6 sm:flex sm:space-x-8">
           <Link
+            href="/"
+            className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-white hover:text-gray-200"
+          >
+            Home
+          </Link>
+          <Link
             href="/about"
             className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-white hover:text-gray-200"
           >
