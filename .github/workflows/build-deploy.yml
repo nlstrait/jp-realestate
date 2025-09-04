@@ -9,7 +9,7 @@ permissions:
   id-token: write
 
 env:
-  NEXT_PUBLIC_BASE_PATH: jp-realestate
+  NEXT_PUBLIC_BASE_PATH: /jp-realestate
 
 defaults:
   run:
