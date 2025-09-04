@@ -4,7 +4,12 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 export default function NavBar() {
+  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,6 +66,50 @@ export default function NavBar() {
             Contact
           </Link>
         </div>
+
+        {/* Hamburger icon for mobile */}
+        <div className='flex sm:hidden'>
+          <button onClick={toggleMenu} className='focus:outline-none'>
+            <svg 
+              className='w-6 h-6 transition-all duration-300 ease-in-out' 
+              fill='none' 
+              stroke='white'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              {isOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M2 6h20M2 12h20M2 18h20"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile menu, toggled by state */}
+        <ul className={`sm:hidden ${isOpen ? 'block opacity-99' : 'invisible opacity-0'} absolute top-full left-0 w-full bg-gray-800 transition-all duration-300 ease-in-out`}>
+          <li className='py-2 px-4 border-t border-gray-700 hover:bg-gray-700'>
+            <Link href="/" onClick={toggleMenu} className='block text-white'>Home</Link>
+          </li>
+          <li className='py-2 px-4 border-t border-gray-700 hover:bg-gray-700'>
+            <Link href="/about" onClick={toggleMenu} className='block text-white'>About</Link>
+          </li>
+          <li className='py-2 px-4 border-t border-gray-700 hover:bg-gray-700'>
+            <Link href="/stories" onClick={toggleMenu} className='block text-white'>Stories</Link>
+          </li>
+          <li className='py-2 px-4 border-t border-gray-700 hover:bg-gray-700'>
+            <Link href="/contact" onClick={toggleMenu} className='block text-white'>Contact</Link>
+          </li>
+        </ul>
 
       </div>
     </nav>
