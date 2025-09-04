@@ -28,7 +28,7 @@ export default function NavBar() {
       `}>
       <div className="flex h-full align-middle">
 
-        <div className='flex items-center'>
+        <div className='z-2 flex items-center'>
           <div className="flex-shrink-0 flex flex-col items-center align-middle">
             <Link href="/" className="text-white font-bold font-serif text-2xl">
               JP Real Estate
@@ -67,8 +67,11 @@ export default function NavBar() {
           </Link>
         </div>
 
+        {/* Overlay (Menu Highlighting) */}
+        <div className={`fixed sm:hidden z-1 ${isOpen ? 'fixed opacity-100' : 'invisible opacity-0'} inset-0 bg-gray-900 transition-all duration-300 ease-in-out`}></div>
+
         {/* Hamburger icon for mobile */}
-        <div className='flex sm:hidden'>
+        <div className='flex sm:hidden z-2'>
           <button onClick={toggleMenu} className='focus:outline-none'>
             <svg 
               className='w-6 h-6 transition-all duration-300 ease-in-out' 
@@ -96,18 +99,18 @@ export default function NavBar() {
         </div>
 
         {/* Mobile menu, toggled by state */}
-        <ul className={`sm:hidden ${isOpen ? 'block opacity-99' : 'invisible opacity-0'} absolute top-full left-0 w-full bg-gray-800 transition-all duration-300 ease-in-out`}>
-          <li className='py-2 px-4 border-t border-gray-700 hover:bg-gray-700'>
-            <Link href="/" onClick={toggleMenu} className='block text-white'>Home</Link>
+        <ul className={`sm:hidden z-2 ${isOpen ? 'block opacity-96' : 'invisible opacity-0'} absolute top-full left-0 w-full text-center font-bold text-white bg-gray-900 transition-all duration-300 ease-in-out`}>
+          <li className='py-4 px-4 justify-middle border-t border-gray-700 hover:bg-gray-700'>
+            <Link href="/" onClick={toggleMenu} className='block'>Home</Link>
           </li>
-          <li className='py-2 px-4 border-t border-gray-700 hover:bg-gray-700'>
-            <Link href="/about" onClick={toggleMenu} className='block text-white'>About</Link>
+          <li className='py-4 px-4 border-t border-gray-700 hover:bg-gray-700'>
+            <Link href="/about" onClick={toggleMenu} className='block'>About</Link>
           </li>
-          <li className='py-2 px-4 border-t border-gray-700 hover:bg-gray-700'>
-            <Link href="/stories" onClick={toggleMenu} className='block text-white'>Stories</Link>
+          <li className='py-4 px-4 border-t border-gray-700 hover:bg-gray-700'>
+            <Link href="/stories" onClick={toggleMenu} className='block'>Stories</Link>
           </li>
-          <li className='py-2 px-4 border-t border-gray-700 hover:bg-gray-700'>
-            <Link href="/contact" onClick={toggleMenu} className='block text-white'>Contact</Link>
+          <li className='py-4 px-4 border-t border-b border-gray-700 hover:bg-gray-700'>
+            <Link href="/contact" onClick={toggleMenu} className='block'>Contact</Link>
           </li>
         </ul>
 
