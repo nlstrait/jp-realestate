@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import Socials from './socials';
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -111,6 +112,9 @@ export default function NavBar() {
           </li>
           <li className='py-4 px-4 border-t border-b border-gray-700 hover:bg-gray-700'>
             <Link href="/contact" onClick={toggleMenu} className='block'>Contact</Link>
+          </li>
+          <li className='py-5 px-4'>
+            <Socials/>
           </li>
         </ul>
 
