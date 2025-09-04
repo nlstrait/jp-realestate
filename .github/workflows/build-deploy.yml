@@ -8,6 +8,9 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  NEXT_PUBLIC_BASE_PATH: jp-realestate
+
 defaults:
   run:
     shell: bash
