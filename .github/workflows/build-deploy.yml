@@ -3,13 +3,10 @@ name: Build and Deploy to GitHub Pages
 on:
   workflow_dispatch:
 
-env:
-  WORKING_DIRECTORY: ./apps/jp-realestate
-
 defaults:
   run:
     shell: bash
-    working-directory: ${{ env.WORKING_DIRECTORY }}
+    working-directory: ./apps/jp-realestate
 
 jobs:
   build-and-deploy:
@@ -28,7 +25,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "${{ env.WORKING_DIRECTORY }}/out"
+          path: ./apps/jp-realestate/out
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
