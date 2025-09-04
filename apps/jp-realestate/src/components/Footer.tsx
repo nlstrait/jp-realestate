@@ -28,7 +28,7 @@ export default function Footer() {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/Contact" className="border-b-2 border-transparent hover:border-white hover:text-gray-200">
+                            <Link href="/contact" className="border-b-2 border-transparent hover:border-white hover:text-gray-200">
                                 Contact
                             </Link>
                         </li>
