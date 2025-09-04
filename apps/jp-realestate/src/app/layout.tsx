@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${playfairDisplay.variable} ${lato.variable} antialiased flex flex-col min-h-screen`}>        
         <NavBar/>
-        <div className="grow">
+        <div className="grow bg-gray-800">
           {children}
         </div>
         <Footer/>
